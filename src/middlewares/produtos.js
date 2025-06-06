@@ -2,9 +2,9 @@
 
 //a função nativa do express "next" é a conexao com o controller: se tudo tiver certo => next
 function validateCreateProduto(req, res, next){
-    const {nome, categoria, preco, imagem_url} = req.body;
+    const {nome, categoria, preco, image_url} = req.body;
 
-    if (!nome || !categoria || !preco || !imagem_url){
+    if (!nome || !categoria || !preco || !image_url){
         return res.status(400).send('Todos os campos sao obrigatorios')
     }
     if (nome.length > 100){
