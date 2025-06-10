@@ -14,6 +14,7 @@ router.get(
 
 //middleware tem que estar no meio ,senao vai criar produto antes de validar
 router.post('/produtos' ,
+    authMiddleware.validateToken,
     produtosMiddleware.validateCreateProduto, 
     produtosController.createProduto)
 
